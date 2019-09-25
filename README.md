@@ -28,7 +28,9 @@ Run this script from inside the newly created container. Singularity will build 
 
 ## Step 4
 
-Run this script also from inside the Docker container to test your newly created Singularity image. In this script, we mount paths into the Singularity image similar to how we mounted them into the Docker image. Only difference is that we mount to /scratch instead of /home, because the actual /home/$USER folder may be mounted to /home by Singularity by default (depending on configuration of Singularity itself).
+Run this script also from inside the Docker container to test your newly created Singularity image. In this script, we mount paths into the Singularity image similar to how we mounted them into the Docker image. Only difference is that we mount to /scratch instead of /home, because the actual /home/$USER folder may be mounted to /home by Singularity by default (depending on configuration of Singularity itself). 
+
+Make sure to change <REFFA> to the name of the actual reference file prior to running script.
 
 `./4_test_in_docker.sh`
 
@@ -39,5 +41,7 @@ Exit the docker container using the `exit` command. Make sure to replace <USER>,
 ## Step 6
 
 Log in to the HPC where the jobs will be submitted. Navigate to the newly created directory in scratch and submit the job to the cluster. Make sure to replace <SCRATCH_PATH>, <PATH_TO_REF> and <ANALYSIS_DIR> with actual variables in the script.
+
+Make sure to change <REFFA> to the name of the actual reference file prior to running script.
 
 `qsub 6_test_on_hpc.sh`

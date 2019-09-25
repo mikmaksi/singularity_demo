@@ -1,8 +1,10 @@
 #!/bin/bash 
 echo "Running GangSTR test:"
 
+# Note: make sure to change <REFFA> to name of actual fasta reference file
+
 regions_bed='/scratch/regions/HTT.bed'
-reffa='/scratch/ref/hg38.fa'
+reffa='/scratch/ref/<REFFA>'
 
 # run gangstr
 for bam in /scratch/bams/*.bam

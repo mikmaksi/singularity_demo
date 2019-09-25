@@ -1,8 +1,10 @@
 #!/bin/bash 
 echo "Running GangSTR test:"
 
+# Note: make sure to change <REFFA> to name of actual fasta reference file
+
 regions_bed='/scratch/regions/HTT.bed'
-reffa='/scratch/ref/GRCh38_full_analysis_set_plus_decoy_hla.fa'
+reffa='/scratch/ref/<REFFA>'
 
 # run gangstr
 for bam in /scratch/bams/*.bam
@@ -13,7 +15,7 @@ do
         --regions $regions_bed \
         --ref $reffa \
         --coverage 50 \
-	--output-readinfo \
-	--verbose \
-	--out no_save/no_save
+        --output-readinfo \
+        --verbose \
+        --out no_save/no_save
 done
